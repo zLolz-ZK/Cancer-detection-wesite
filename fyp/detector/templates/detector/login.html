@@ -1,0 +1,43 @@
+{% extends 'detector/base.html'%}
+{% load static %}
+
+{% block head %}
+<title> Doctor Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% endblock %}
+
+   
+{% block body %}
+
+
+  <div class="container">
+    <div class="title">Doctor Login</div>
+    <div class="content">
+
+      <form action="" method="POST">
+          {% csrf_token %}
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Email ID</span>
+            <input type="email" name = 'email' placeholder="Enter Email Id" required>
+          </div>
+          
+          <div class="input-box">
+            <span class="details"  >Password</span>
+            <input  id="password"  name="password" type="password" placeholder="Enter your password" required >
+             <i class="far fa-eye" id="togglePassword"></i>
+          </div>
+          
+       
+        
+        <div class="button">
+            <input type="submit" rel="noopener noreferrer" value="Submit">
+        </div>
+      </form>
+      {% for message in messages %}
+      {{message}}
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

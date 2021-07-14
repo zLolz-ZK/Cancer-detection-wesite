@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+</head>
+
+<body>
+    <div class='bar'>
+      <nav>
+      <a href="{% url 'detector:home' %}">Home</a>
+      
+      {% if user.is_authenticated %}
+        <a href="{% url 'detector:welcome' %}">Dashboard</a>
+        <a href="{% url 'detector:new_patient' %}">Patient Registration</a>
+        <a href="{% url 'detector:patient_list' %}">All Patients</a>
+        <a href="{% url 'detector:logout' %}">Logout</a>
+      {% else %}
+        <a href="{% url 'detector:login' %}">Login</a>
+        <a href="{% url 'detector:registration' %}">Register?</a>
+      {% endif %}
+      </nav>
+    </div>
+  </body>
+</html>

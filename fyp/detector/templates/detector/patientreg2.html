@@ -1,0 +1,163 @@
+{% extends 'detector/base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% load cropping thumbnail %}
+{% load crispy_forms_tags %}
+{% block head %}
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{{ form.media }}
+    <style type="text/css">
+      .frame {
+        width: 80%;
+        height: 80%;
+        border: 3px solid #ccc;
+        background: #000;
+        margin: auto;
+        padding: 15px 10px;
+      }
+    </style>
+    {% endblock %}
+
+  {% block body %}
+    <form class="signup-form" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- form header -->
+      <div class="form-header">
+        <h1 style="font-family:arial black;">PATIENT DETAILS</h1>
+      </div>
+    
+      <!-- form body -->
+      <div class="form-body">
+    
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Patient's First Name <span style="color: red;">*</span></label>
+            {{ form.fname |as_crispy_field }}
+          </div>
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Patient's Last Name <span style="color: red;">*</span></label>
+            {{ form.lname |as_crispy_field}}
+          </div>
+        </div>
+    
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="label-title">Email <span style="color: red;">*</span></label>
+          <br>
+          {{ form.email_id |as_crispy_field}}
+        </div>
+    
+        <!-- Passwrod and confirm password -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Patient's Id <span style="color: red;">*</span></label>
+    
+            {{ form.patient_id|as_crispy_field }}
+          </div>
+          <div class="form-group right">
+            <label for="experience" class="label-title">D.O.B <span style="color: red;">*</span></label>
+            <br>
+            {{ form.dob |as_crispy_field}}
+          </div>
+    
+    
+        </div>
+    
+        <!-- Gender and Hobbies -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Gender: <span style="color: red;">*</span></label>
+            <div class="input-group">
+              {{ form.gender |as_crispy_field}}
+            </div>
+          </div>
+    
+          <div class="form-group left">
+            <label for="choose-file" class="label-title">Upload Image <span style="color: red;">*</span></label>
+            {{form.img |as_crispy_field}}
+          </div>
+        </div>
+    
+        <!-- Source of Income and Income -->
+        <div class="horizontal-group">
+    
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Weight <span style="color: red;">*</span></label>
+            <br>
+            {{ form.weight |as_crispy_field}}
+          </div>
+    
+        </div>
+    
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+    
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Height <span style="color: red;">*</span></label>
+            <br>
+            {{ form.height |as_crispy_field}}
+          </div>
+
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="choose-file" class="label-title" style="width: 100%;">Upload Image <span style="color: red;">*</span></label>
+            {{ form.cropping}}
+          </div>
+
+<!--display  image-->
+<br>
+</div>
+
+
+        </div>
+
+        <!-- Bio -->
+        <div class="form-group">
+          
+          <label for="choose-file" class="label-title" style="width: 100%;">Symptoms <span style="color: red;">*</span></label>
+          {{ form.symptoms}}
+        </div>
+         <div class="form-group">
+          <label for="choose-file" class="label-title">Algeries <span style="color: red;">*</span></label>
+          {{ form.allergies}}
+        </div>
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Product Used <span style="color: red;">*</span></label>
+          {{ form.products_used}}
+        </div>
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Family History <span style="color: red;">*</span></label>
+          {{ form.family_history}}
+        </div>
+
+      </div>
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+        
+
+        <input type="submit" name="Save" class="btn">
+      </div>
+
+    </form>
+
+    <!-- Script for range input label -->
+    <script>
+      var rangeLabel = document.getElementById("range-label");
+      var experience = document.getElementById("experience");
+
+      function change() {
+      rangeLabel.innerText = experience.value + "K";
+      }
+    </script>
+
+{% endblock %}

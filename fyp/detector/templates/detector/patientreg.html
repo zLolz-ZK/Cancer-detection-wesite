@@ -1,0 +1,141 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="{% static 'css/form.css'%}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  </head>
+  <body>
+    {% include "detector/navbar.html" %}
+    <form class="signup-form" action="" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- form header -->
+      <div class="form-header">
+        <h1 style="font-family:arial black;">PATIENT DETAILS</h1>
+      </div>
+
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Patient's First Name <span style="color: red;">*</span></label>
+            {{ form.fname |as_crispy_field }}
+          </div>
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Patient's Last Name <span style="color: red;">*</span></label>
+            {{ form.lname |as_crispy_field}}
+          </div>
+        </div>
+        
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="label-title">Email </label>
+        <br>
+          {{ form.email_id |as_crispy_field}}
+        </div>
+
+        <!-- Passwrod and confirm password -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Patient's Id <span style="color: red;">*</span></label>
+            
+            {{ form.patient_id|as_crispy_field }}
+          </div>
+           <div class="form-group right">
+            <label for="experience" class="label-title">D.O.B <span style="color: red;">*</span></label>
+            <br>
+            {{ form.dob |as_crispy_field}}
+          </div>
+
+          
+        </div>
+
+        <!-- Gender and Hobbies -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label class="label-title">Gender: </label>
+            <div class="input-group">
+              {{ form.gender |as_crispy_field}}
+            </div>
+          </div>
+         
+          <div class="form-group left">
+            <label for="choose-file" class="label-title">Upload Image <span style="color: red;">*</span></label>
+            {{form.img |as_crispy_field}}
+          </div>
+        </div>
+        
+        <!-- Source of Income and Income -->
+        <div class="horizontal-group">
+           
+          <div class="form-group right">
+            <label for="lastname" class="label-title">Weight </label>
+            <br>
+            {{ form.weight |as_crispy_field}}
+          </div>
+         
+        </div>
+
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+          
+          <div class="form-group left">
+            <label for="firstname" class="label-title">Height </label>
+            <br>
+            {{ form.height |as_crispy_field}}
+          </div>
+           
+
+        </div>
+
+        <!-- Bio -->
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Symptoms <span style="color: red;">*</span></label>
+          <br>
+          {{ form.symptoms |as_crispy_field}}
+        </div>
+         <div class="form-group">
+          <label for="choose-file" class="label-title">Algeries </label>
+          <br>
+          {{ form.allergies |as_crispy_field}}
+        </div>
+        
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Family History </label>
+          <br>
+          {{ form.family_history |as_crispy_field}}
+        </div>
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Previous Record </label>
+          <br>
+          {{ form.products_used |as_crispy_field}}
+        </div>
+        <div class="form-group">
+          <label for="choose-file" class="label-title">Product Used </label>
+          <br>
+          {{ form.previous_record |as_crispy_field}}
+        </div>
+      </div>
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+        
+        {{form.errors}}
+        <input type="submit" name="Submit" class='btn'>
+      </div>
+
+    </form>
+    
+
+
+  </body>
+</html>

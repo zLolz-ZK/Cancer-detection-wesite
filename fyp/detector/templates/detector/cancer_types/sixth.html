@@ -1,0 +1,79 @@
+{% extends 'detector/base.html' %}
+{% load static %}
+{% block head %}
+	<title>MELANOCYTIC NEVI</title>
+  	<link rel="stylesheet" type="text/css" href="{% static 'css/second.css' %}"><link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+{% endblock %}
+
+{% block body %}
+<h1 style="font-size: 50px;color: white; font-family: arial black;margin-top:50px;"><span>MELANOCYTIC NEVI
+</span></h1>
+<h4 >An intradermal nevus (also called an intradermal melanocytic nevus) is simply a classic mole or birthmark. It typically appears </h4>
+<h4> as an elevated, dome-shaped bump on the surface of the skin. It’s estimated that about one percent of newborns are born
+</h4>
+<h4> with an intradermal nevus. “Nevus” refers to the mole. “Intradermal” means that the cells of the mole are located beneath</h4>
+<h4> the most external layer of skin. Because of this, the birthmark has the same degree of pigmentation as the surrounding</h4>
+<h4>  skin.  In most cases, intradermal nevi appear after adolescence and are benign (noncancerous) skin growths.
+
+</h4>
+
+
+<br>
+<img class="center" id="myImg" src="{% static 'images/six.jpg' %}" alt="MELANOCYTIC NEVI
+
+" width="400px;" height="300px"> 
+<br>
+<div class="type"> <h1 style="font-family:Stylish;">The first melanoma signs and symptoms often areWhat are the symptoms of an intradermal nevus?:-</h1>
+	<h2>Intradermal nevi appear as flesh-colored bumps on the surface of the skin, though they can also appear slightly brown. In some cases, they’ll contain brown spots of small dilated blood vessels. Intradermal nevi can appear anywhere on the skin; however, they most often show up on the scalp, neck, upper arms and legs, and neck. They can also appear on the eyelid.
+The bumps are usually small, ranging anywhere from 5 millimeters (mm) to 1 centimeter (cm). In children, they’re often flat and a similar color to the person’s skin tone. Once a person reaches adolescence, the nevus usually becomes more visible. By the time a person reaches 70 years old, almost all nevi have lost much of their pigmentation. Nevi appear raised from the surface of the skin and feel rubbery. An intradermal nevus is typically round and well-defined. It may even be hairy. It’s also possible that nevi can appear warty and dome shaped.
+</h2>
+<div class="type"> <h1 style="font-family:Stylish;">What causes a person to develop an intradermal nevus?:-</h1>
+  <h2>An intradermal nevus is the result of one of three causes:</h2>
+<ul>
+  <li>sun damage, especially for those with fairer skin</li>
+  <li>immunosuppressive treatments, such as those used in cancer, which can cause more moles to develop</li>
+  <li>genetic factors, such as your parents having a lot of moles, which makes it more likely that you will have them as too</li>
+</ul>
+<div class="type"> <h1 style="font-family:Stylish;">When do you need to see a doctor about an intradermal nevus?:-</h1>
+<h2>In most cases, it’s not necessary to seek medical attention for the treatment of an intradermal nevus. You should ask your doctor to examine any new skin growths that you’ve noticed. Always make an appointment if you notice a change in the size, shape, or color of your mole. If the mole bothers you because of how it looks or because it catches on your clothing, you can see your doctor about treatment as well.
+
+</h2>
+
+<div class="type"> <h1 style="font-family:Stylish;">Can an intradermal nevus be removed?:-</h1>
+  <h2>Unless your mole has recently changed in size, shape, or color, no treatment is necessary for an intradermal nevus. However, it is possible to remove the mole if that’s what you’d like. Your doctor will most likely use a method called dermal electrosurgical shave excision to remove the mole, because it’s a fast and inexpensive way to remove moles.
+</h2>
+
+  
+
+</div>
+</div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script type="text/javascript">
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the imge and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+{% endblock %}

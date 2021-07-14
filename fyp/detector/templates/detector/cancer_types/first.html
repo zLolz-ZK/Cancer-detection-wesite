@@ -1,0 +1,109 @@
+{% extends 'detector/base.html' %}
+{% load static %}
+{% block head %}
+	<title>Actinic keratosis</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}"><link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+{% endblock %}
+
+{% block body %}
+<h1 style="font-size: 50px;color: white; font-family: arial black; margin-top: 50px;"><span>ACTINIC KERATOSIS</span></h1>
+<h4 >An actinic keratosis (ak-TIN-ik ker-uh-TOE-sis) is a rough, scaly patch on the skin that develops from years of sun exposure. It's often found on the face, lips, ears,  
+<h4>forearms,scalp, neck or back of the hands.Also known as a solar keratosis, an actinic keratosis grows slowly and usually first appears in people over 40.  <h4>You can reduce your risk of this skin condition by minimizing your sun exposure and protecting your skin from ultraviolet (UV) rays.Left</h4>
+<h4> untreated, the risk of actinic keratoses turning into a type of skin cancer called squamous cell carcinoma is about 5% to 10%.</h4>
+</h4>
+<br>
+<img class="center" id="myImg" src="{% static 'images/first.jpg' %}" alt="ACTINIC KERATOSIS" width="400px;" height="300px"> 
+<br>
+<div class="type"> <h1 style="font-family:Stylish;">SYMPTOMS:-</h1>
+	<h2>Actinic keratoses vary in appearance. Signs and symptoms include:
+</h2>
+<ul>
+  <li>Rough, dry or scaly patch of skin, usually less than 1 inch (2.5 centimeters) in diameter
+</li>
+  <li>Flat to slightly raised patch or bump on the top layer of skin</li>
+  <li>n some cases, a hard, wart like surface
+</li>
+<li>Color variations, including pink, red or brown</li>
+<li>Itching, burning, bleeding or crusting
+</li>
+<li>New patches or bumps on sun-exposed areas of the head, neck, hands and forearms
+</li>
+</ul>  
+
+<div class="type"> <h1 style="font-family:Stylish;">CAUSES:-</h1>
+<h3>An actinic keratosis is caused by frequent or intense exposure to UV rays from the sun or tanning beds.
+</h3>
+</div>
+<div class="type"> <h1 style="font-family:Stylish;">RISK FACTORS:-</h1>
+<h2>Anyone can develop actinic keratoses. But you're at increased risk if you:
+</h2>
+<ul>
+  <li>Have red or blond hair and blue or light-colored eyes.
+</li>
+  <li>Have a history of a lot of sun exposure or sunburn.</li>
+  <li>Tend to freckle or burn when exposed to sunlight.
+</li>
+<li>Are older than 40.</li>
+<li>Live in a sunny place.
+</li>
+<li>Work outdoors.
+</li>
+<li>Have a weakened immune system</li>
+</ul>  
+<div class="type"> <h1 style="font-family:Stylish;">COMPLICATIONS:-</h1>
+<h3>If treated early, actinic keratosis can be cleared up or removed. If left untreated, some of these spots might progress to squamous cell carcinoma </h3><h3>a type of cancer that usually isn't life-threatening if detected and treated early.
+</h3>
+
+<div class="type"> <h1 style="font-family:Stylish;">PREVENTION:-</h1>
+<h2>Sun safety is necessary to help prevent development and recurrence of actinic keratosis patches and spots.
+</h2>
+<h3>Take these steps to protect your skin from the sun:</h3>
+<ul>
+  <li>Limit your time in the sun. Especially avoid time in the sun between 10 a.m. and 2 p.m. And avoid staying in the sun so long that you get a sunburn or a suntan.
+
+</li>
+  <li>Use sunscreen. Before spending time outdoors, even on cloud days, apply a broad-spectrum water-resistant sunscreen with a sun protection factor (SPF) of at least 30, as the American Academy of Dermatology recommends.
+Use sunscreen on all exposed skin, and use lip balm with sunscreen on your lips. Apply sunscreen at least 15 minutes before going outside and reapply it every two hours — or more often if you're swimming or perspiring.
+Sunscreen is not recommended for babies under 6 months. Rather, keep them out of the sun if possible, or protect them with shade, hats, and clothing that covers the arms and legs.
+</li>
+  <li>Cover up. For extra protection from the sun, wear tightly woven clothing that covers your arms and legs. Also wear a broad-brimmed hat, which provides more protection than does a baseball cap or golf visor.
+</li>
+<li>Avoid tanning beds. The UV exposure from a tanning bed can cause just as much skin damage as a tan acquired from the sun.
+</li>
+<li>Check your skin regularly and report changes to your doctor. Examine your skin regularly, looking for the development of new skin growths or changes in existing moles, freckles, bumps and birthmarks. With the help of mirrors, check your face, neck, ears and scalp. Examine the tops and undersides of your arms and hands.
+
+</li>
+
+</ul>  
+</div>
+</div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script type="text/javascript">
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the imge and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+{% endblock %}

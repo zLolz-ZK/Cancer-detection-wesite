@@ -1,0 +1,104 @@
+{% extends 'detector/base.html' %}
+{% load static %}
+{% block head %}
+	<title>BENIGN KERATOSIS</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/second.css' %}"><link href='https://fonts.googleapis.com/css?family=Stylish' rel='stylesheet'>
+{% endblock %}
+{% block body %}
+<h1 style="font-size: 50px;color: white; font-family: arial black;margin-top:50px;"><span>BENIGN KERATOSIS</span></h1>
+<h4 >It is also known as Seborrheic Keratosis. A seborrheic keratosis is a type of skin growth. They can be unsightly, but the growths aren’t harmful. However, in some cases seborrheic keratosis 
+
+<h4>can be difficult to distinguish from melanoma, a very serious type of skin cancer.If your skin changes unexpectedly, you should always have it looked at by a doctor. Multiple lesions may appear, </h4>
+
+<h4>although at the beginning there may be just one. Growths can be found on many areas of the body, including the Chest, Scalp, Shoulders, Back, Abdomen, faceGrowths can be found anywhere on the body  </h4>
+
+<h4>except on the soles of the feet or the palms..Growths often start out as small, rough areas. Over time, they tend to develop a thick, wart-like surface. They’re often described as having a “stuck-on” <h4>appearance. They may also look waxy and have slightly raised surfaces. Growths are usually round or oval-shaped. Growths are usually brown, but they can also be yellow, white, or black. Risk factors for this </h4><h4>condition include Older age.The condition often develops in those who are middle-aged. Risk increases with age.Family members with seborrheic keratosisThis skin condition often runs in families.
+</h4>
+<h4> Risk increases with the number of affected relatives.Frequent sun exposure. There is some evidence that skin exposed to the sun is more likely to develop seborrheic keratosis. However,</h4><h4> growths also appear on skin that is usually covered up when people go outdoors.
+
+</h4>
+<br>
+<img class="center" id="myImg" src="{% static 'images/third.png' %}" alt="BENIGN KERATOSIS" width="400px;" height="300px"> 
+<br>
+<div class="type"> <h1 style="font-family:Stylish;">When to see a doctor:-</h1>
+	<h2>A seborrheic keratosis isn’t dangerous, but you shouldn’t ignore growths on your skin. It can be difficult to distinguish between harmless and dangerous growths. Something that looks like seborrheic keratosis could actually be melanoma.</h2>
+<h3>Have a healthcare provider check your skin if:
+</h3>
+
+<ul>
+  <li>there’s a new growth
+</li>
+  <li>there’s a change in appearance of an existing growth
+</li>
+  <li>there’s only one growth (seborrheic keratosis usually exists as several)
+
+</li>
+<li>a growth has an unusual color, such as purple, blue, or reddish-black
+</li>
+<li>a growth has borders that are irregular (blurred or jagged)</li>
+<li>a growth is irritated or painful</li>
+</ul>  
+<h2>If you’re worried about any growth, make an appointment with your doctor. It’s better to be too cautious than ignore a potentially serious problem.
+</h2>
+
+<div class="type"> <h1 style="font-family:Stylish;">Diagnosing seborrheic keratosis:-</h1>
+<h3>A dermatologist will often be able to diagnose seborrheic keratosis by eye. If there’s any uncertainty, they’ll likely remove part or all of the growth for testing in a laboratory. This is called a skin biopsy.
+</h3>
+<h3>The biopsy will be examined under a microscope by a trained pathologist. This can help your doctor diagnose the growth as either seborrheic keratosis or cancer (such as malignant melanoma).
+</h3>
+</div>
+<div class="type"> <h1 style="font-family:Stylish;">Common treatment methods for seborrheic keratosis:-</h1>
+<h2>In many cases, seborrheic keratosis doesn’t need treatment. However, your doctor may decide to remove any growths that have a suspicious appearance or cause physical or emotional discomfort.
+</h2>
+
+<div class="type"> <h1 style="font-family:Stylish;">Methods of removal:-</h1>
+  <h2>Three commonly used removal methods are:
+</h2>
+<ul>
+  <li>Cryosurgery, which uses liquid nitrogen to freeze off the growth. 
+</li>
+  <li>Electrosurgery, which uses an electrical current to scrape off the growth. The area is numbed before the procedure.
+</li>
+  <li>Curettage, which uses a scoop-like surgical instrument to scrape off the growth. It’s sometimes used with electrosurgery.
+</li>
+
+
+</ul>  
+<div class="type"> <h1 style="font-family:Stylish;">After removal:-</h1>
+<h2>Your skin may be lighter at the site of removal. The difference in skin color often becomes less noticeable over time. Most of the time a seborrheic keratosis won’t return, but it’s possible to develop a new one on another part of your body.
+
+</h2>
+
+
+</div>
+</div>
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+<script type="text/javascript">
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the imge and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+{% endblock %}
