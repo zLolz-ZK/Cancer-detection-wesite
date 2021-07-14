@@ -1,4 +1,4 @@
-# Cancer-detection-wesite
+# Cancer-detection-website
 Final Year project implementation using django The model is not kept here as the size is too big and I'll add a link to it later in google drive.
 
 The models are made using Transfer Learning using InceptionResNetv2 as a feature Extactor. 
